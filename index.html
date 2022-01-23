@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function computerPlay() {
+            let textArray = ['Rock', 'Paper', 'Scissors']
+            let randomIndex = Math.floor(Math.random() * textArray.length)
+            return textArray[randomIndex]
+        }
+        console.log("Computer chose: " + computerPlay())
+
+        function playerSelection(input) {
+
+            stringInput = input.toLowerCase()
+
+            if (stringInput == "rock") {
+                playerChoice = 'Rock'
+            }
+
+            else if (stringInput == 'paper') {
+                playerChoice = 'Paper'
+            }
+
+            else if (stringInput == 'scissors') {
+                playerChoice = 'Scissors'
+            }
+
+            return playerChoice
+        }
+
+        function playRound(computerChoice, playerChoice) {
+
+            if (computerChoice == 'Rock') {
+                if (playerChoice == 'rock') {
+                    return "It's a draw!"
+                }
+                else if (playerChoice == 'paper') {
+                    playerScore++
+                    return "You win! Paper beats Rock"
+                }
+                else if (playerChoice == 'scissors') {
+                    computerScore++
+                    return "You lose! Rock beats Scissors"
+                }
+            }
+
+            if (computerChoice == 'Paper') {
+                if (playerChoice == 'rock') {
+                    computerScore++
+                    return "You lose! Paper beats Rock"
+                }
+                else if (playerChoice == 'paper') {
+                    return "It's a draw!"
+                }
+                else if (playerChoice == 'scissors') {
+                    playerScore++
+                    return "You win! Scissors beats paper"
+                }
+            }
+
+            if (computerChoice == 'Scissors') {
+                if (playerChoice == 'rock') {
+                    playerScore++
+                    return "You win! Rock beats Scissors"
+                }
+                else if (playerChoice == 'paper') {
+                    ComputerScore++
+                    return "You lose! Scissors beats paper"
+                }
+                else if (playerChoice == 'scissors') {
+                    return "It's a draw!"
+                }
+            }
+
+        }
+
+        function game() {
+
+            while (gamesPlayed < 5) {
+
+                computerChoice = computerPlay()
+
+                playerChoice = prompt("Type 'rock', 'paper', or 'scissors'")
+
+                playerChoice = playerChoice.toLowerCase()
+                
+                console.log("You chose: " + playerChoice)
+                
+                console.log(playRound(computerChoice, playerChoice))
+
+                gamesPlayed++
+            }
+
+            console.log("You: " + playerScore + " | Computer: " + computerScore)
+
+        }
+
+        let gamesPlayed = 0;
+        let playerScore = 0;
+        let computerScore = 0;
+
+        game()
+
+    </script>
+</body>
+</html>
