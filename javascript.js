@@ -76,8 +76,6 @@ function playRound(computerChoice, playerChoice) {
 
 }
 
-//console.log("You: " + playerScore + " | Computer: " + computerScore)
-
 let gamesPlayed = 0;
 let playerScore = 0;
 let computerScore = 0;
