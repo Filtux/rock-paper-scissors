@@ -1,0 +1,46 @@
+* {
+    background-color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 160px;
+}
+
+#rock, #paper, #scissors {
+    display: flex;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    width: 250px;
+    padding: 40px;
+    margin: 20px;
+    font-size: 40px;
+    border-radius: 15px;
+    transition-duration: 0.5s;
+}
+
+#rock:hover,
+#paper:hover,
+#scissors:hover {
+    background-color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+}
